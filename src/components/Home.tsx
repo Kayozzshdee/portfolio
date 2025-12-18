@@ -1,11 +1,4 @@
-import { useState } from "react"
-
-
-
 export default function Home(){
-
-    const [to_contact, setToContact] = useState(false);
-
 
     return(
         <div className="p-8 pt-20" id="home">
