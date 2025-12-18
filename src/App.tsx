@@ -1,18 +1,16 @@
-import "./App.css";
+// App.tsx
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import About from "./components/About";
-// import Contact from './components/Contact'
+import Contact from "./components/Contact";
 
 export default function App() {
   return (
-    <div className="bg-[#0e141e] w-full">
-      <div>
-        <Nav />
-        <Home />
-        <About />
-        {/* <Contact/> */}
-      </div>
-    </div>
+    <main className="bg-[#0e141e] min-h-screen selection:bg-blue-500/30">
+      <Nav />
+      <Home />
+      <About />
+      <Contact />
+    </main>
   );
 }

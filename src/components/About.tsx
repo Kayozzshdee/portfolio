@@ -1,40 +1,43 @@
+const skills = [
+  { name: "React", img: "react-logo.png" },
+  { name: "Next.js", img: "Next.js" },
+  { name: "Python", img: "Python-logo.png" },
+  { name: "Tailwind", img: "tailwindcss.webp" },
+  { name: "JS", img: "js-logo.jpg" },
+  { name: "HTML", img: "html.png" },
+];
 
-
-
-export default function About() {   
-
-
-    return(
-        <div className="p-8 " id="about">
-            <div>
-                <div  className="flex flex-col gap-4">
-                    <h1 className="text-4xl fond-bold flex justify-center text-white">About Me</h1>
-                    <div className="flex flex-col justify-center items-center">
-                        <div className="flex flex-col justify-center items-center gap-4 w-1/3">
-                            <h1 className="text-white text-3xl">School</h1>
-                            <div className="flex justify-center items-center gap-10">
-                                <div className="flex flex-col gap-2 text-white">
-                                    <h1>Student of Mongol Koosen Technology College</h1>
-                                    <p>4th year</p>
-                                    <p>Name: Gan-Erdene</p>
-                                </div>
-                        
-                                <img src="MK.png" alt="Mongol Koosen Technology College" className="w-64 h-56 border rounded-lg" />
-                            </div>
-                        </div>
-                        <div className="flex flex-col gap-5">
-                            <h1 className="text-white text-3xl flex justify-center items-center">Usages</h1>
-                            <div className="flex gap-3">
-                                <img src="C.svg" alt=""  /><img src="CSS3-Logo.jpg" alt=""  className="w-40 h-40"/>
-                                <img src="html.png" alt="" className="w-40 h-40"/><img src="js-logo.jpg" alt="" className="w-40 h-40"/>
-                                <img src="Next.js" alt="" className="w-40 h-40"/><img src="Python-logo.png" alt="" className="w-40 h-40"/>
-                                <img src="react-logo.png" alt="" className="w-40 h-40"/><img src="tailwindcss.webp" alt="" className="w-40 h-40"/>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
+export default function About() {
+  return (
+    <section className="py-24 px-6 bg-[#0b111a]"  id="about">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-bold text-white mb-4">About Me</h2>
+          <div className="h-1 w-20 bg-blue-500 mx-auto rounded-full"></div>
         </div>
-    )
+
+        <div className="grid md:grid-cols-2 gap-12 items-center mb-20 bg-[#161f2c] p-8 rounded-2xl border border-white/5">
+          <img src="MK.png" className="rounded-xl w-full h-48 object-cover transition-all" alt="School" />
+          <div className="text-gray-300">
+            <h3 className="text-xl font-bold text-white mb-2">Education</h3>
+            <p className="font-medium text-blue-400">Mongol Koosen Technology College</p>
+            <p className="text-sm mt-2 leading-relaxed">
+              4th-year student focusing on modern web standards and engineering principles. 
+              Currently exploring the depths of React and TypeScript.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-center text-white font-bold mb-8">Programming Languages I use</h3>
+        <div className="grid grid-cols-3 md:grid-cols-6 gap-4">
+          {skills.map((skill) => (
+            <div key={skill.name} className="flex flex-col items-center p-4 bg-[#0e141e] border border-white/5 rounded-xl hover:border-blue-500/50 transition-colors group">
+              <img src={skill.img} alt={skill.name} className="w-10 h-10 object-contain mb-2 group-hover:scale-110" />
+              <span className="text-[10px] uppercase tracking-widest text-gray-500">{skill.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 }
